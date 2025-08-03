@@ -13,7 +13,7 @@
 
 #banner {
   min-height: 250px;
-  background-color: black;
+  background-color: blue;
   border: 5px solid white;
 }
 
@@ -22,9 +22,9 @@
   flex-flow: row;
   align-items: center;
   height: 100%;
-  border: 5px solid black;
+  border: 5px solid white;
   border-radius: 5px;
-  background-color: red;
+  background-color: black;
 }
 
 .fileUpload:hover, .fileUploadHover {
@@ -59,7 +59,7 @@
   font-size: 200%;
   text-align: center;
   font-weight: bolder;
-  color: white;
+  color: black;
 }
 
 .linkOverlay:hover {

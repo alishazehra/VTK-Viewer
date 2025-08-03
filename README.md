@@ -1,4 +1,4 @@
-![Glance](documentation/content/GlanceLogo.png)
+<!-- ![Glance](documentation/content/GlanceLogo.png)
 
 Introduction
 ============
@@ -111,4 +111,4 @@ Glance is distributed under the OSI-approved BSD 3-clause License.  See [COPYRIG
 
 [COPYRIGHT]: COPYRIGHT
 [LICENSE]: LICENSE
-[ParaView Licenses]: http://www.paraview.org/paraview-license/
+[ParaView Licenses]: http://www.paraview.org/paraview-license/ -->

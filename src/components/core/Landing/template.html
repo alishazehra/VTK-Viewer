@@ -1,95 +1,90 @@
-<div class="grey lighten-3" :id="$style.root">
-  <v-responsive class="grey darken-3">
-    <v-container grid-list-lg fill-height :id="$style.banner">
-      <v-layout row align-center>
+
+<div class="grey lighten-3 pa-0" :id="$style.root">
+  <v-responsive class="grey darken-4">
+    <v-container fill-height fluid :id="$style.banner" class="py-12">
+      <v-layout wrap align-center>
         <!-- LEFT TEXT -->
         <v-flex
-          :xs6="!$vuetify.breakpoint.smAndDown"
           :xs12="$vuetify.breakpoint.smAndDown"
+          :md6="!$vuetify.breakpoint.smAndDown"
+          class="px-4"
         >
           <v-card flat dark color="transparent">
-            <v-card-title class="display-1 text-center pv-break-word">
+            <!-- Responsive Heading -->
+            <v-card-title
+              class="text-center font-weight-bold"
+              :class="{
+                'display-1': $vuetify.breakpoint.md,
+                'display-2': $vuetify.breakpoint.lgAndUp,
+                'headline': $vuetify.breakpoint.smAndDown
+              }"
+            >
               Visualize your data with <br />
-              VTK-Viewer
+              <span >VTK-Viewer</span>
             </v-card-title>
-            <v-card-text>
-              A general purpose standalone web application by
+
+            <v-card-text class="body-1 white--text mt-4">
+              A general-purpose web app by
               <a
                 target="_blank"
-                class="indigo--text text--lighten-3"
+                
                 rel="noopener noreferrer"
               >
-                VTK-Viewer.
+                VTK-Viewer
               </a>
-              that can be used to visualize many data types.
-              It is also a great framework for building custom
-              viewers on the web which can involve remote services.
+              for viewing diverse data formats. Easily extendable with remote
+              services and custom workflows.
             </v-card-text>
           </v-card>
         </v-flex>
 
         <!-- RIGHT SIDE -->
-        <!-- BIG SCREEN: Drag-and-Drop Upload -->
         <v-flex
-          v-if="!$vuetify.breakpoint.smAndDown"
-          key="if-large-enough-screen"
-          xs6
-          fill-height
+          :xs12="$vuetify.breakpoint.smAndDown"
+          :md6="!$vuetify.breakpoint.smAndDown"
+          class="d-flex justify-center"
         >
-          <drag-and-drop
-            enabled
+          <!-- Desktop Upload -->
+          <div
+            v-if="!$vuetify.breakpoint.smAndDown"
             :class="$style.dnd"
-            @drop="$emit('open-files', $event)"
+            style="width: 100%; max-width: 420px;"
           >
-            <template v-slot:default="{ dragHover }">
-              <div
-                :class="{
-                  [$style.fileUpload]: true,
-                  [$style.fileUploadHover]: dragHover
-                }"
-                @click.stop="$emit('open')"
-                :style="$vuetify.breakpoint.width < 400 ? 'transform: scale(0.8); transform-origin: center;' : ''"
-              >
-                <div
-                  class="white--text body-2"
-                  :class="$style.fileUploadContents"
+            <drag-and-drop enabled @drop="$emit('open-files', $event)">
+              <template v-slot:default="{ dragHover }">
+                <v-sheet
+                  class="d-flex flex-column align-center justify-center"
+                  elevation="8"
+                  color="grey darken-2"
+                  rounded
+                  height="250"
+                  :class="{ [$style.fileUploadHover]: dragHover }"
+                  style="cursor: pointer;"
+                  @click.stop="$emit('open')"
                 >
-                  <v-btn
-                    color="primary"
-                    raised="false"
-                    @click.stop="$emit('open')"
-                  >
-                    <span v-if="dragHover" class="text-uppercase mr-2">
-                      drop your file
-                    </span>
-                    <span v-else class="text-uppercase mr-2">
-                      open a file
-                    </span>
-                    <v-icon>mdi-folder-outline</v-icon>
-                  </v-btn>
-                  <div class="pv-no-select mt-2">
-                    or drop one anywhere in this box to begin.
+                  <v-icon x-large color="white">mdi-cloud-upload</v-icon>
+                  <div class="white--text mt-3">
+                    <strong v-if="dragHover">Drop your file</strong>
+                    <strong v-else>Click to open a file</strong>
                   </div>
-                </div>
-              </div>
-            </template>
-          </drag-and-drop>
-        </v-flex>
+                  <div class="caption white--text mt-2">
+                    or drop it anywhere in this box
+                  </div>
+                </v-sheet>
+              </template>
+            </drag-and-drop>
+          </div>
 
-        <!-- SMALL SCREEN: Small Upload Button -->
-        <v-flex
-          v-else
-          xs12
-          class="d-flex justify-center mt-4"
-        >
+          <!-- Mobile Upload Button -->
           <v-btn
+            v-else
             color="primary"
-            class="text-uppercase"
-            px-8 py-8
+            class="mt-6 text-uppercase font-weight-bold"
+            large
             @click.stop="$emit('open')"
           >
             Upload File
-            <v-icon right small>mdi-folder-outline</v-icon>
+            <v-icon right>mdi-folder-outline</v-icon>
           </v-btn>
         </v-flex>
       </v-layout>
@@ -97,38 +92,35 @@
   </v-responsive>
 
   <!-- SAMPLE DATA -->
-  <v-container class="mt-4 pv-no-select" grid-list-lg>
+  <v-container class="mt-8" fluid>
     <v-layout row wrap>
       <v-flex xs12>
-        <span class="title">Sample Data</span>
+        <span class="title font-weight-bold">Sample Data</span>
       </v-flex>
+
       <v-flex
         v-for="(sample, i) in samples"
         :key="i"
-        :xs4="$vuetify.breakpoint.mdAndUp"
-        :xs6="$vuetify.breakpoint.sm"
         :xs12="$vuetify.breakpoint.xs"
+        :sm6="$vuetify.breakpoint.sm"
+        :md4="$vuetify.breakpoint.mdAndUp"
+        class="pa-2"
       >
-        <v-card :class="$style.sampleData" flat tile>
-          <v-img :src="sample.image" height="300px" />
+        <v-card class="elevation-4 rounded-lg overflow-hidden" tile>
+          <v-img :src="sample.image" height="200px" class="white--text" />
           <div
-            :class="$style.linkOverlay"
+            class="pa-4 d-flex flex-column justify-space-between"
             @click.stop="openSample(sample)"
+            style="cursor: pointer;"
           >
-            <div :class="$style.linkOverlayText" class="body-2">
+            <div class="subtitle-2 font-weight-bold mb-2">
               {{ sample.label }} ({{ sample.size }})
-              <div
-                :class="$style.description"
-                v-if="sample.description"
-              >
-                {{ sample.description }}
-              </div>
-              <div
-                :class="$style.acknowledgement"
-                v-if="sample.acknowledgement"
-              >
-                {{ sample.acknowledgement }}
-              </div>
+            </div>
+            <div class="caption grey--text" v-if="sample.description">
+              {{ sample.description }}
+            </div>
+            <div class="caption grey--text" v-if="sample.acknowledgement">
+              {{ sample.acknowledgement }}
             </div>
           </div>
         </v-card>
@@ -137,10 +129,10 @@
   </v-container>
 
   <!-- FOOTER -->
-  <v-footer class="d-flex flex-column" height="48px" color="transparent">
-    <div class="mb-2 text-center grey--text text--darken-2">
-      <div>&copy; {{ new Date().getFullYear() }} — Kitware, Inc.</div>
-      <div>Glance ({{ version }})</div>
+  <v-footer class="d-flex flex-column mt-8 py-4" color="transparent">
+    <div class="text-center grey--text text--darken-2">
+      <div>&copy; {{ new Date().getFullYear() }} — VTK-Viewer.</div>
+     
     </div>
   </v-footer>
 </div>
