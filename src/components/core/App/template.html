@@ -22,10 +22,7 @@
           :disabled="landingVisible"
           @click.native.stop="controlsDrawer = !controlsDrawer"
         />
-        <v-tooltip
-          bottom
-          :disabled="smallScreen"
-        >
+        <v-tooltip bottom :disabled="smallScreen">
           <template v-slot:activator="{ on }">
             <a
               href="#"
@@ -86,13 +83,6 @@
               <span v-show="state !== 'dense'">
                 Screenshots ({{ screenshotCount }})
               </span>
-            </collapsible-toolbar-item>
-            <collapsible-toolbar-item
-              v-on:click="aboutDialog = true"
-              :state="state"
-            >
-              <v-icon left>mdi-information</v-icon>
-              <span v-show="state !== 'dense'">About</span>
             </collapsible-toolbar-item>
           </template>
         </collapsible-toolbar>
