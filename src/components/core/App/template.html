@@ -1,4 +1,5 @@
-<drag-and-drop
+
+  <drag-and-drop
   :enabled="!landingVisible && !fileUploadDialog"
   v-on:drop="openFileList"
 >
@@ -22,7 +23,13 @@
           :disabled="landingVisible"
           @click.native.stop="controlsDrawer = !controlsDrawer"
         />
-        <v-tooltip bottom :disabled="smallScreen">
+        <div style="font-weight: bold; font-style: italic; color: #1976d2;; font-size: 20px; margin-left: 10px;">
+          🔵 VTK-Viewer
+        </div>
+        <v-tooltip
+          bottom
+          :disabled="smallScreen"
+        >
           <template v-slot:activator="{ on }">
             <a
               href="#"
@@ -84,6 +91,7 @@
                 Screenshots ({{ screenshotCount }})
               </span>
             </collapsible-toolbar-item>
+            <!-- About button removed -->
           </template>
         </collapsible-toolbar>
       </v-app-bar>
@@ -163,14 +171,7 @@
       <!-- browser issues -->
       <browser-issues />
 
-      <!-- about dialog -->
-      <component
-        :is="dialogType"
-        v-model="aboutDialog"
-        max-width="50%"
-      >
-        <about-box v-on:close="aboutDialog = false" />
-      </component>
+      <!-- About dialog removed -->
 
       <!-- error dialog-->
       <component

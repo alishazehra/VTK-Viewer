@@ -105,17 +105,17 @@
 //       },
 //     ],
 //   },
-//   // {
-//   //   label: 'Head.mha',
-//   //   image: Images.Head,
-//   //   size: '6.2 MB',
-//   //   datasets: [
-//   //     {
-//   //       name: 'head.glance',
-//   //       url: `https://raw.githubusercontent.com/Kitware/paraview-glance/${version}/data/head.glance`,
-//   //     },
-//   //   ],
-//   // },
+//   {
+//     label: 'Head.mha',
+//     image: Images.Head,
+//     size: '6.2 MB',
+//     datasets: [
+//       {
+//         name: 'head.glance',
+//         url: `https://raw.githubusercontent.com/Kitware/paraview-glance/${version}/data/head.glance`,
+//       },
+//     ],
+//   },
 //   {
 //     label: 'Aneurysm.vti',
 //     image: Images.Aneurism,
@@ -129,44 +129,44 @@
 //     acknowledgement: 'Philips Research, Hamburg, Germany',
 //     description: 'Rotational C-arm x-ray scan of the arteries of the right half of a human head. A contrast agent was injected into the blood and an aneurism is present.',
 //   },
-//   // {
-//   //   label: 'Backpack.vti',
-//   //   image: Images.Backpack,
-//   //   size: '8.3 MB',
-//   //   description: "CT scan of a backpack filled with items.",
-//   //   acknowledgement: "Kevin Kreeger, Viatronix Inc., USA",
-//   //   datasets: [
-//   //     {
-//   //       name: 'Backpack.vti',
-//   //       url: 'https://kitware.github.io/vtk-js-datasets/data/vti/backpack.vti',
-//   //     },
-//   //   ],
-//   // },
-//   // {
-//   //   label: 'Head MRI CISS',
-//   //   image: Images.Head,
-//   //   size: '5.1 MB',
-//   //   datasets: [
-//   //     {
-//   //       name: 'Head.vti',
-//   //       url: 'https://kitware.github.io/vtk-js-datasets/data/vti/mri_ventricles.vti',
-//   //     },
-//   //   ],
-//   //   acknowledgement: 'Dirk Bartz, VCM, University of Tübingen, Germany',
-//   //   description: '1.5T MRT 3D CISS dataset of a human head that highlights the CSF (Cerebro-Spinal-Fluid) filled cavities of the head.',
-//   // },
-//   // {
-//   //   label: 'Foot',
-//   //   image: Images.Foot,
-//   //   url: 'https://kitware.github.io/vtk-js-datasets/data/vti/foot.vti',
-//   //   size: '4.3 MB',
-//   //   datasets: [
-//   //     {
-//   //       name: 'Foot.vti',
-//   //       url: 'https://kitware.github.io/vtk-js-datasets/data/vti/foot.vti',
-//   //     },
-//   //   ],
-//   //   acknowledgement: 'Philips Research, Hamburg, Germany',
-//   //   description: 'Rotational C-arm x-ray scan of a human foot. Tissue and bone are present in the dataset.',
-//   // },
+//   {
+//     label: 'Backpack.vti',
+//     image: Images.Backpack,
+//     size: '8.3 MB',
+//     description: "CT scan of a backpack filled with items.",
+//     acknowledgement: "Kevin Kreeger, Viatronix Inc., USA",
+//     datasets: [
+//       {
+//         name: 'Backpack.vti',
+//         url: 'https://kitware.github.io/vtk-js-datasets/data/vti/backpack.vti',
+//       },
+//     ],
+//   },
+//   {
+//     label: 'Head MRI CISS',
+//     image: Images.Head,
+//     size: '5.1 MB',
+//     datasets: [
+//       {
+//         name: 'Head.vti',
+//         url: 'https://kitware.github.io/vtk-js-datasets/data/vti/mri_ventricles.vti',
+//       },
+//     ],
+//     acknowledgement: 'Dirk Bartz, VCM, University of Tübingen, Germany',
+//     description: '1.5T MRT 3D CISS dataset of a human head that highlights the CSF (Cerebro-Spinal-Fluid) filled cavities of the head.',
+//   },
+//   {
+//     label: 'Foot',
+//     image: Images.Foot,
+//     url: 'https://kitware.github.io/vtk-js-datasets/data/vti/foot.vti',
+//     size: '4.3 MB',
+//     datasets: [
+//       {
+//         name: 'Foot.vti',
+//         url: 'https://kitware.github.io/vtk-js-datasets/data/vti/foot.vti',
+//       },
+//     ],
+//     acknowledgement: 'Philips Research, Hamburg, Germany',
+//     description: 'Rotational C-arm x-ray scan of a human foot. Tissue and bone are present in the dataset.',
+//   },
 // ];

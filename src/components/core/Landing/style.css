@@ -84,3 +84,89 @@
 } 
 
 
+#root {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  padding-bottom: 16px;
+  
+  
+}
+
+.dnd {
+  height: 100%;
+}
+
+#banner {
+  min-height: 250px;
+  background-color: blue;
+  border: 5px solid white;
+}
+
+.fileUpload {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  height: 100%;
+  border: 5px solid white;
+  border-radius: 5px;
+  background-color: black;
+}
+
+.fileUpload:hover, .fileUploadHover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.fileUploadContents {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+.sampleData {
+  flex: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 7 3px 6px rgba(0,6,0,0.23);}
+
+.linkOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.555);
+  font-size: 200%;
+  text-align: center;
+  font-weight: bolder;
+  color: black;
+}
+
+.linkOverlay:hover {
+  opacity: 1;
+}
+
+.acknowledgement {
+  font-size: 80%;
+}
+
+.description {
+  font-size: 80%;
+  color: lightgray;
+}
+
+.linkOverlayText {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: black;
+  padding: 10px;
+} 
+
+
